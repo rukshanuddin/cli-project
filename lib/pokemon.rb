@@ -1,5 +1,5 @@
 require_relative '../config/environment'
-
+doc = Nokogiri::HTML(open("https://pokemondb.net/pokedex"))
 pokedex_array = doc.css(".grid-row li")
 
 pokedex_array.each.with_index(1) do |pokedex, idx|
@@ -11,13 +11,7 @@ pokedex_array.each.with_index(1) do |pokedex, idx|
       poke_vers = Pokedex.new(version, url, info, index)
 end
 
-def printpoke
- Pokedex.all.each.with_index(1) do |pokedex, idx|
- puts "#{idx}. #{pokedex.version}"
- puts pokedex.url
- puts pokedex.info
- end
-end
+
 
 def dex_url(input)
     Pokedex.all.find {|pokedex| pokedex.index == input}.url

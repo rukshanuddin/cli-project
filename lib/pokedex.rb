@@ -1,6 +1,4 @@
-require_relative '../config/environment'
-
-doc = Nokogiri::HTML(open("https://pokemondb.net/pokedex"))
+        require_relative '../config/environment'
 
 class Pokedex
 
@@ -26,5 +24,11 @@ class Pokedex
 
 end
 
-
+def printpoke
+    Pokedex.all.each.with_index(1) do |pokedex, idx|
+        puts "#{idx}. #{pokedex.version}"
+        puts pokedex.url
+        puts pokedex.info
+    end
+end
 

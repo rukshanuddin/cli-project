@@ -5,4 +5,6 @@ require 'pry'
 
 Bundler.require
 
-require_all 'lib'
+require_relative '../lib/pokedex.rb'
+require_relative '../lib/pokemon.rb'
+require_relative '../lib/scraper.rb'

@@ -1,3 +1,5 @@
+require_relative '../config/environment'
+
 pokedex_array = doc.css(".grid-row li")
 
 pokedex_array.each.with_index(1) do |pokedex, idx|

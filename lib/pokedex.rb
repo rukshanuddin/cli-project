@@ -1,6 +1,4 @@
-require 'nokogiri'
-require 'open-uri'
-require 'pry'
+require_relative '../config/environment'
 
 doc = Nokogiri::HTML(open("https://pokemondb.net/pokedex"))
 

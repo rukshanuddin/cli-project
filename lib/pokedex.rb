@@ -21,8 +21,9 @@ class Pokedex
         @@all
     end
 
-    def self.clear
+    def self.clear #clear
         @@all.clear
+        @@all
     end
 
 end

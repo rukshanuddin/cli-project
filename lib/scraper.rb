@@ -15,6 +15,19 @@ class Scrape
             poke_vers = Pokedex.new(version, url, info, index)
         end
     end
-    
+
+    def self.info(pokemon)
+        if pokemon == "Nidoran♂"
+            puts Nokogiri::HTML(open("https://pokemondb.net/pokedex/nidoran-m")).css(".grid-col.span-md-6.span-lg-8").text
+        elsif pokemon == "Nidoran♀"
+        puts Nokogiri::HTML(open("https://pokemondb.net/pokedex/nidoran-f")).css(".grid-col.span-md-6.span-lg-8").text
+        elsif pokemon == "Farfetch'd"
+            puts Nokogiri::HTML(open("https://pokemondb.net/pokedex/farfetchd")).css(".grid-col.span-md-6.span-lg-8").text
+        elsif pokemon == "Mr. Mime"
+            puts Nokogiri::HTML(open("https://pokemondb.net/pokedex/mr-mime")).css(".grid-col.span-md-6.span-lg-8").text
+        else   
+            puts Nokogiri::HTML(open("https://pokemondb.net/pokedex/#{pokemon}")).css(".grid-col.span-md-6.span-lg-8").text.to_s.yellow
+        end
+    end
 
 end

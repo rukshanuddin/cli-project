@@ -16,7 +16,7 @@ class Pokemon                                               #Define Pokemon clas
         @@all
     end
 
-    def clear.all
+    def self.clear
         @@all.clear
     end
 end

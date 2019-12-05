@@ -16,7 +16,7 @@ class Scrape
         end
     end
 
-    def self.info(pokemon)
+    def self.pokemon(pokemon)
         if pokemon == "Nidoran♂"
             puts Nokogiri::HTML(open("https://pokemondb.net/pokedex/nidoran-m")).css(".grid-col.span-md-6.span-lg-8").text
         elsif pokemon == "Nidoran♀"

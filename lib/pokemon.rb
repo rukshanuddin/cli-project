@@ -1,35 +1,12 @@
 require_relative '../config/environment'
-doc = Nokogiri::HTML(open("https://pokemondb.net/pokedex"))
-pokedex_array = doc.css(".grid-row li")
 
-pokedex_array.each.with_index(1) do |pokedex, idx|
-      version = pokedex.text
-      index = idx
-        # binding.pry
-      info = pokedex.css("href value")
-      url = "https://pokemondb.net#{pokedex.css("a")[0].attributes["href"].value}"
-      poke_vers = Pokedex.new(version, url, info, index)
-end
+class Pokemon                                               #Define Pokemon class
 
-
-
-def dex_url(input)
-    Pokedex.all.find {|pokedex| pokedex.index == input}.url
-end
-
-input = 1
-
-list_doc = Nokogiri::HTML(open(dex_url(input)))
-
-pokemon_array = list_doc.css("a.ent-name")
-
-class Pokemon 
-
-    attr_accessor :name, :number, :info, :url
+    attr_accessor :name,  :info, :url
     @@all = []
-    def initialize(name, number, info, url)
+    def initialize(name, info, url)
         @name = name
-        @number = number
+
         @info = info
         @url = url
         @@all << self 
@@ -39,25 +16,41 @@ class Pokemon
     end
 end
 
-
-pokemon_array.uniq.each.with_index(1) do |pokemon, idx|
-    number = idx
-    #binding.pry
-    url = "https://pokemondb.net#{pokemon.attributes["href"].value}" if !nil
-    name = pokemon.text
-    info = pokemon.text
-    Pokemon.new(name, number, info, url)
+def dex_url(input)
+    Pokedex.all.find {|pokedex| pokedex.index == input}.url
 end
+
+# input = 1
+def dex_html(input)
+    list_doc = Nokogiri::HTML(open(dex_url(input)))
+    pokemon_array = list_doc.css("a.ent-name")
+    
+    pokemon_array.each.with_index(1) do |pokemon, idx|
+        
+            number = idx
+     #binding.pry
+            url = "https://pokemondb.net#{pokemon.attributes["href"].value}" if !nil
+            name = pokemon.text
+            info = pokemon.text
+        if pokemon.text != pokemon_array[idx - 2].text
+            Pokemon.new(name, info, url)
+        end
+    end
+    pront
+end
+
+
 
 def pront
 Pokemon.all.each.with_index(1) do |pokemon, idx|
-    if pokemon.number < 151
+    if idx < 151
     puts pokemon.url
-    puts "#{pokemon.number} #{idx}"
+    puts "#{idx}. #{pokemon.name}"
     end
 end
 end
-pront
+# end
+# pront
 
 
 

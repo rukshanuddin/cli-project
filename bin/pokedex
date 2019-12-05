@@ -1,3 +1,13 @@
 #!/usr/bin/env ruby
 
 require_relative '../config/environment'
+
+puts "Welcome to the world of Pokemon!"
+
+
+puts "Enter 'list' to list pokedexes"
+puts "Enter 'exit' to exit"
+input = gets.strip
+welcome(input)
+selection = gets.strip.to_i
+dex_html(selection)

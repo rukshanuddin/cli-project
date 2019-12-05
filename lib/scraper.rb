@@ -2,10 +2,11 @@ require_relative '../config/environment'
 
 class Scrape
 
-    doc = Nokogiri::HTML(open("https://pokemondb.net/pokedex"))
-    pokedex_array = doc.css(".grid-row li")
+    
+    def self.pokedex
+        doc = Nokogiri::HTML(open("https://pokemondb.net/pokedex"))
+        pokedex_array = doc.css(".grid-row li")
 
-    def pokedex
         pokedex_array.each.with_index(1) do |pokedex, idx|
             version = pokedex.text
             index = idx
@@ -15,4 +16,5 @@ class Scrape
         end
     end
     
+
 end

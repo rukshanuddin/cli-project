@@ -5875,5 +5875,5 @@ def print_pokemon(number)
         printf("             /HHHHHHHHH/\n");
 
         ;
-end
+    end
 end

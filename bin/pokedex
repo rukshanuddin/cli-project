@@ -2,4 +2,4 @@
 
 require_relative '../config/environment'
 
-print_pokemon(2)
+run

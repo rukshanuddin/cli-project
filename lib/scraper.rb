@@ -8,10 +8,11 @@ class Scrape
         pokedex_array = doc.css(".grid-row li")
 
         pokedex_array.each.with_index(1) do |pokedex, idx|
-            version = pokedex.text
+            version = pokedex.css("a").text
             index = idx
-            info = pokedex.css("href value")
+            info = pokedex.css("p").text
             url = "https://pokemondb.net#{pokedex.css("a")[0].attributes["href"].value}"
+
             poke_vers = Pokedex.new(version, url, info, index)
         end
     end

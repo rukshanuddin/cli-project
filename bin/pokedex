@@ -3,3 +3,4 @@
 require_relative '../config/environment'
 
 CLI.new
+#pokedex creates a new instance of CLI class

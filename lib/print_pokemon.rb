@@ -24,7 +24,8 @@ def dot_dot_dot(number)
         print ".".blue.on_red
         sleep(0.01)
     end
-    print ".\n".blue.on_red
+    print ".".blue.on_red
+    print "\n"
 end
 
 def ash

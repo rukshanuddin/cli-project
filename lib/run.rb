@@ -84,6 +84,7 @@ class CLI
         puts ""
         sleep(1)
         puts logo.to_s.yellow
+        dot_dot_dot(95)
     end
     def pokedex_selection
         selection = gets.strip

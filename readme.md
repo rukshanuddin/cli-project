@@ -1,22 +1,18 @@
 # Pokedex
-This is all placeholder
+This is an application to provide Pokedex entries for all Pokemon, based on several lists available on http://www.pokemondb.net
 
 ## Installation
 
-You can install this gem via `gem install recipe-finder`. The recipe-finder CLI will be installed and you can run recipe-finder to get a list of food categories and recipes right in your command line.
+You can install by cloning this repository to your local machine.
 
 ## Usage
 
-Run `recipe-finder` after installing the gem.
+Run `bin/pokedex` after cloning the repository
 
 
 ## Development
 
-After checking out the repo, run `bundle exec bin/setup` to install dependencies. Then, run `bundle exec rake spec` to run the tests. You can also run `bundle exec bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-To run the development version of the CLI run `bundle exec bin/recipe-finder`.
 
 ## Contributing
 

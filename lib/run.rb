@@ -59,7 +59,7 @@ class CLI
         sleep(0.25)
     end
     def list_pokedex
-        #Lists all pokedex
+        #Lists all pokedexes
         Pokedex.all.each.with_index(1) do |pokedex, idx|
             puts "#{idx}. #{pokedex.version}".red
             puts pokedex.info.blue
@@ -68,16 +68,21 @@ class CLI
         end
     end
     def exit_animation
-        dot_dot_dot(100)
-        print "Gotta"
+        #animation for exiting program
+        puts ash
+        dot_dot_dot(95)
+        print "\t\tGotta"
         sleep(0.25)
-        print " Catch "
+        print "\t\tCatch "
         sleep(0.25)
-        print "'Em"
+        print "\t\t'Em"
         sleep(0.25)
-        print " All!'\n"
-        sleep(0.25)
-        puts pika.to_s.red
+        print "\t\tAll!'\n"
+        sleep(1)
+        dot_dot_dot(95)
+        puts ""
+        sleep(1)
+        puts logo.to_s.yellow
     end
     def pokedex_selection
         selection = gets.strip

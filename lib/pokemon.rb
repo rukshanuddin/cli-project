@@ -20,15 +20,12 @@ class Pokemon                                               #Define Pokemon clas
     def number=(number)
         @number = number
     end
-
     def self.clear_names
         @@all_names.clear
     end
-
     def self.all
         @@all
     end
-
     def self.clear
         @@all.clear
     end

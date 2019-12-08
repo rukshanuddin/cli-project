@@ -20,7 +20,7 @@ To run the development version of the CLI run `bundle exec bin/recipe-finder`.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/hansenjl/recipes.
+Bug reports and pull requests are welcome on GitHub at https://github.com/rukshanuddin/cli-project.
 
 
 ## License

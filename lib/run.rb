@@ -69,6 +69,7 @@ class CLI
     end
     def exit_animation
         #animation for exiting program
+        dot_dot_dot(95)
         puts ash
         dot_dot_dot(95)
         print "\t\tGotta"

@@ -1,11 +1,12 @@
 class CLI
-
+    #Array of all pokemon for which pictures are available
     @@picture_array = ["Bulbasaur", "Ivysaur","Venusaur","Charmander","Charmeleon","Charizard","Squirtle","Wartortle","Blastoise","Caterpie","Metapod","Butterfree","Weedle","Kakuna","Beedrill","Pidgey","Pidgeotto","Pidgeot","Rattata","Raticate","Spearow","Fearow","Ekans","Arbok","Pikachu","Raichu","Sandshrew","Sandslash","Nidoran♀","Nidorina","Nidoqueen","Nidoran♂","Nidorino","Nidoking","Clefairy","Clefable","Vulpix","Ninetales","Jigglypuff","Wigglytuff","Zubat","Golbat","Oddish","Gloom","Vileplume","Paras","Parasect","Venonat","Venomoth","Diglett","Dugtrio","Meowth","Persian","Psyduck","Golduck","Mankey","Primeape","Growlithe","Arcanine","Poliwag","Poliwhirl","Poliwrath","Abra","Kadabra","Alakazam","Machop","Machoke","Machamp","Bellsprout","Weepinbell","Victreebel","Tentacool","Tentacruel","Geodude","Graveler","Golem","Ponyta","Rapidash","Slowpoke","Slowbro","Magnemite","Magneton","Farfetch'd","Doduo","Dodrio","Seel","Dewgong","Grimer","Muk","Shellder","Cloyster","Gastly","Haunter","Gengar","Onix","Drowzee","Hypno","Krabby","Kingler","Voltorb","Electrode","Exeggcute","Exeggutor","Cubone","Marowak","Hitmonlee","Hitmonchan","Lickitung","Koffing","Weezing","Rhyhorn","Rhydon","Chansey","Tangela","Kangaskhan","Horsea","Seadra","Goldeen","Seaking","Staryu","Starmie","Mr. Mime","Scyther","Jynx","Electabuzz","Magmar","Pinsir","Tauros","Magikarp","Gyarados","Lapras","Ditto","Eevee","Vaporeon","Jolteon","Flareon","Porygon","Omanyte","Omastar","Kabuto","Kabutops","Aerodactyl","Snorlax","Articuno","Zapdos","Moltres","Dratini","Dragonair","Dragonite","Mewtwo","Mew"].map {|word| word.downcase}
 
     def initialize
         greeting
         run    
     end
+
     def greeting
         #Welcome screen greeting
         print "W"
@@ -52,7 +53,9 @@ class CLI
         sleep(0.05)       
         print "f\n"
         sleep(0.1)
+        dot_dot_dot(100)
         puts logo.to_s.yellow
+        dot_dot_dot(100)
         puts "Enter 'list' to list pokedexes".blue
         sleep(0.25)
         puts "Enter 'exit' to exit".red
@@ -95,8 +98,8 @@ class CLI
         elsif selection == 'exit'
             exit_animation
         else
-            puts "Not a valid selection try again!".red
-            puts "Enter your selection".yellow
+            puts "Not a valid selection try again!".red.on_blue
+            puts "Enter your selection".black.on_yellow
             pokedex_selection
         end
         
@@ -118,7 +121,7 @@ class CLI
         elsif input == "list"
             Scrape.pokedex
             list_pokedex
-            puts "Enter your selection:"
+            puts "Enter your selection:".black.on_yellow
             pokedex_selection        
         else
             print "Not ".red
@@ -126,7 +129,7 @@ class CLI
             print "valid ".green 
             print "input! "
             print "Try again!\n".yellow
-            puts "You can type 'list' or 'exit'"
+            puts "You can type 'list' or 'exit'".black.on_white
             run    
         end
     end

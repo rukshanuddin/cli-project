@@ -21,10 +21,10 @@ end
 def dot_dot_dot(number)
     #Dot animation method
     number.times do
-        print "."
+        print ".".blue.on_red
         sleep(0.01)
     end
-    print ".\n"
+    print ".\n".blue.on_red
 end
 
 def ash

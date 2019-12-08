@@ -63,12 +63,7 @@ class CLI
     end
     def list_pokedex
         #Lists all pokedexes
-        Pokedex.all.each.with_index(1) do |pokedex, idx|
-            puts "#{idx}. #{pokedex.version}".red
-            puts pokedex.info.blue
-            puts pokedex.url.green
-            dot_dot_dot(15)
-        end
+        Pokedex.list
     end
     def exit_animation
         #animation for exiting program
@@ -98,15 +93,21 @@ class CLI
         elsif selection == 'exit'
             exit_animation
         else
-            puts "Not a valid selection try again!".red.on_blue
-            puts "Enter your selection".black.on_yellow
+            not_valid
+            enter_selection
             pokedex_selection
         end
         
     end
+    def enter_selection
+        puts "Enter your selection".black.on_yellow
+    end
+    def not_valid
+        puts "Not a valid selection try again!".red.on_blue
+    end
     def gathering_info
         print "Gathering information. Please wait"
-        dot_dot_dot(100)
+        dot_dot_dot(80)
         puts "Here is your info!".green
         dot_dot_dot(100)
         sleep(0.5)
@@ -121,14 +122,10 @@ class CLI
         elsif input == "list"
             Scrape.pokedex
             list_pokedex
-            puts "Enter your selection:".black.on_yellow
+            enter_selection
             pokedex_selection        
         else
-            print "Not ".red
-            print "a "
-            print "valid ".green 
-            print "input! "
-            print "Try again!\n".yellow
+            not_valid
             puts "You can type 'list' or 'exit'".black.on_white
             run    
         end

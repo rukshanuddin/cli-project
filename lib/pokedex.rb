@@ -1,7 +1,7 @@
 require_relative '../config/environment'
 
 class Pokedex
-
+    #Define Pokedex Class
     attr_accessor :version, :url, :info, :index
 
         @@all = []

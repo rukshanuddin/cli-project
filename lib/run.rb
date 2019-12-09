@@ -1,64 +1,54 @@
 class CLI
     #Array of all pokemon for which pictures are available
-    @@picture_array = ["Bulbasaur", "Ivysaur","Venusaur","Charmander","Charmeleon","Charizard","Squirtle","Wartortle","Blastoise","Caterpie","Metapod","Butterfree","Weedle","Kakuna","Beedrill","Pidgey","Pidgeotto","Pidgeot","Rattata","Raticate","Spearow","Fearow","Ekans","Arbok","Pikachu","Raichu","Sandshrew","Sandslash","Nidoran♀","Nidorina","Nidoqueen","Nidoran♂","Nidorino","Nidoking","Clefairy","Clefable","Vulpix","Ninetales","Jigglypuff","Wigglytuff","Zubat","Golbat","Oddish","Gloom","Vileplume","Paras","Parasect","Venonat","Venomoth","Diglett","Dugtrio","Meowth","Persian","Psyduck","Golduck","Mankey","Primeape","Growlithe","Arcanine","Poliwag","Poliwhirl","Poliwrath","Abra","Kadabra","Alakazam","Machop","Machoke","Machamp","Bellsprout","Weepinbell","Victreebel","Tentacool","Tentacruel","Geodude","Graveler","Golem","Ponyta","Rapidash","Slowpoke","Slowbro","Magnemite","Magneton","Farfetch'd","Doduo","Dodrio","Seel","Dewgong","Grimer","Muk","Shellder","Cloyster","Gastly","Haunter","Gengar","Onix","Drowzee","Hypno","Krabby","Kingler","Voltorb","Electrode","Exeggcute","Exeggutor","Cubone","Marowak","Hitmonlee","Hitmonchan","Lickitung","Koffing","Weezing","Rhyhorn","Rhydon","Chansey","Tangela","Kangaskhan","Horsea","Seadra","Goldeen","Seaking","Staryu","Starmie","Mr. Mime","Scyther","Jynx","Electabuzz","Magmar","Pinsir","Tauros","Magikarp","Gyarados","Lapras","Ditto","Eevee","Vaporeon","Jolteon","Flareon","Porygon","Omanyte","Omastar","Kabuto","Kabutops","Aerodactyl","Snorlax","Articuno","Zapdos","Moltres","Dratini","Dragonair","Dragonite","Mewtwo","Mew"].map {|word| word.downcase}
+    @@picture_array = [
+        "Bulbasaur",
+        "Ivysaur",
+        "Venusaur",
+        "Charmander",
+        "Charmeleon","Charizard","Squirtle","Wartortle","Blastoise","Caterpie",
+        "Metapod","Butterfree","Weedle","Kakuna","Beedrill","Pidgey","Pidgeotto","Pidgeot",
+        "Rattata","Raticate","Spearow","Fearow","Ekans","Arbok","Pikachu","Raichu","Sandshrew",
+        "Sandslash","Nidoran♀","Nidorina","Nidoqueen","Nidoran♂","Nidorino","Nidoking","Clefairy",
+        "Clefable","Vulpix","Ninetales","Jigglypuff","Wigglytuff","Zubat","Golbat","Oddish","Gloom",
+        "Vileplume","Paras","Parasect","Venonat","Venomoth","Diglett","Dugtrio","Meowth","Persian","Psyduck",
+        "Golduck","Mankey","Primeape","Growlithe","Arcanine","Poliwag","Poliwhirl","Poliwrath","Abra","Kadabra",
+        "Alakazam","Machop","Machoke","Machamp","Bellsprout","Weepinbell","Victreebel","Tentacool","Tentacruel",
+        "Geodude","Graveler","Golem","Ponyta","Rapidash","Slowpoke","Slowbro","Magnemite","Magneton","Farfetch'd",
+        "Doduo","Dodrio","Seel","Dewgong","Grimer","Muk","Shellder","Cloyster","Gastly","Haunter","Gengar","Onix",
+        "Drowzee","Hypno","Krabby","Kingler","Voltorb","Electrode","Exeggcute","Exeggutor","Cubone","Marowak","Hitmonlee",
+        "Hitmonchan","Lickitung","Koffing","Weezing","Rhyhorn","Rhydon","Chansey","Tangela","Kangaskhan","Horsea","Seadra",
+        "Goldeen","Seaking","Staryu","Starmie","Mr. Mime","Scyther","Jynx","Electabuzz","Magmar","Pinsir","Tauros","Magikarp",
+        "Gyarados","Lapras","Ditto","Eevee","Vaporeon","Jolteon","Flareon","Porygon","Omanyte","Omastar","Kabuto","Kabutops",
+        "Aerodactyl","Snorlax","Articuno","Zapdos","Moltres","Dratini","Dragonair","Dragonite","Mewtwo",
+        "Mew"].map {|word| word.downcase}
 
     def initialize
         greeting
         run    
     end
 
+    def slow_print(sentence)
+        sentence.each_char {|letter| print letter; sleep(0.05)}
+        print "\n"
+    end
     def greeting
-        #Welcome screen greeting
-        print "W"
-        sleep(0.05)
-        print "e"
-        sleep(0.05)
-        print "l"
-        sleep(0.05)
-        print "c"
-        sleep(0.05)
-        print "o"
-        sleep(0.05)
-        print "m"
-        sleep(0.05)
-        print "e"
-        sleep(0.05)
-        print " "
-        sleep(0.05)
-        print "t"
-        sleep(0.05)
-        print "o"
-        sleep(0.05)
-        print " "
-        sleep(0.05)
-        print "t"
-        sleep(0.05)
-        print "h"
-        sleep(0.05)
-        print "e"
-        sleep(0.05)
-        print " "
-        sleep(0.05)
-        print "w"
-        sleep(0.05)
-        print "o"
-        sleep(0.05)       
-        print "r"
-        sleep(0.05)       
-        print "l"
-        sleep(0.05)       
-        print "d "
-        sleep(0.05)       
-        print "o"
-        sleep(0.05)       
-        print "f\n"
-        sleep(0.1)
-        dot_dot_dot(100)
+        slow_print("...")
+        slow_print("Hello there! Welcome to the world of")
+        dot_dot_dot(95)
         puts logo.to_s.yellow
-        dot_dot_dot(100)
-        puts "Enter 'list' to list pokedexes".blue
+        dot_dot_dot(95)
+        slow_print("My name is OAK! People call me the POKEMON PROF! This world is inhabited by creatures called ")
+        slow_print("POKEMON! For some people, POKEMON are pets. Others use them for fights. Myself...I study ")
+        slow_print("POKEMON as a profession. On the desk there is my invention, POKEDEX! It automatically records ")
+        slow_print("data on POKEMON you've seen or caught! It's a hi-tech encyclopedia!")
+        main_menu
+    end
+    def main_menu
+        puts "\t\t\tEnter 'list' to list PokeDexes\t\t\t\t\t\t".yellow.on_blue
         sleep(0.25)
-        puts "Enter 'exit' to exit".red
+        puts "\t\t\tEnter 'pics' to list all Pokemon with images available\t\t\t".white.on_red
+        sleep(0.25)
+        puts "\t\t\tEnter 'exit' to exit\t\t\t\t\t\t\t".blue.on_yellow
         sleep(0.25)
     end
     def list_pokedex
@@ -84,12 +74,15 @@ class CLI
         puts logo.to_s.yellow
         dot_dot_dot(95)
     end
+    def list_and_select_pokemon
+        list_pokemon
+        pokemon_selection
+    end
     def pokedex_selection
         selection = gets.strip
         if selection.to_i <= 21 && selection.to_i != 0
             Scrape.populate_pokemon(selection.to_i)
-            list_pokemon
-            pokemon_selection
+            list_and_select_pokemon
         elsif selection == 'exit'
             exit_animation
         else
@@ -106,9 +99,12 @@ class CLI
         puts "Not a valid selection try again!".red.on_blue
     end
     def gathering_info
-        print "Gathering information. Please wait"
-        dot_dot_dot(80)
-        puts "Here is your info!".green
+        print "Gathering information. Please wait".red.on_white
+        print "\n"
+        dot_dot_dot(100)
+        print "\n"
+        puts "Here is your info!".red.on_white
+        print "\n"
         dot_dot_dot(100)
         sleep(0.5)
     end
@@ -116,17 +112,20 @@ class CLI
     def run
         Pokemon.clear
         Pokedex.clear
+        Scrape.pokedex
         input = gets.strip
         if input == "exit"
             exit_animation
         elsif input == "list"
-            Scrape.pokedex
             list_pokedex
             enter_selection
-            pokedex_selection        
+            pokedex_selection
+        elsif input == "pics"
+            Scrape.populate_pokemon(17)
+            list_and_select_pokemon       
         else
             not_valid
-            puts "You can type 'list' or 'exit'".black.on_white
+            puts "You can type 'pics', 'list or 'exit'".black.on_white
             run    
         end
     end
@@ -138,14 +137,23 @@ class CLI
             sleep(0.02)
             end
     end
-
+    def pick_a_pokemon
+        print "Enter the name of a Pokemon or it's index for more information:\nor type 'exit' to go back to main menu:".yellow
+        print "\n"
+    end
     def pokemon_selection
-        
-        puts "Enter the name of a Pokemon for more information or type 'exit' to go back to main menu:".yellow
+        pick_a_pokemon
         input = gets.strip.downcase    
         if input.to_i > 0 && input.to_i < (Pokemon.all.size + 1)
             gathering_info
-            print_pokemon(input.to_i)
+            if Pokemon.all.size == 151
+                print_pokemon(input.to_i)
+            else
+                name = Pokemon.name_by_number(input.to_i).downcase
+                if picture_array.include?(name)
+                    print_pokemon(picture_array.index(name)+1)
+                end
+            end
             dot_dot_dot(100)
             Scrape.by_number(input.to_i)
             dot_dot_dot(100)
@@ -160,10 +168,12 @@ class CLI
             dot_dot_dot(100)
             pokemon_selection
         elsif input == 'exit'
-            greeting
+            main_menu
             run
         else
-            puts "Please select from this list!"
+            pick_a_pokemon
+            puts "Please select from the following list!"
+            sleep(1)
             dot_dot_dot(100)
             list_pokemon
             pokemon_selection

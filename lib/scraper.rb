@@ -39,13 +39,13 @@ class Scrape
     def self.pokemon(pokemon)
         #Scrapes info for pokemon based on name
         if pokemon == "nidoran♂"
-            puts Nokogiri::HTML(open("https://pokemondb.net/pokedex/nidoran-m")).css(".grid-col.span-md-6.span-lg-8").text
+            puts Nokogiri::HTML(open("https://pokemondb.net/pokedex/nidoran-m")).css(".grid-col.span-md-6.span-lg-8").text.to_s.yellow
         elsif pokemon == "nidoran♀"
-            puts Nokogiri::HTML(open("https://pokemondb.net/pokedex/nidoran-f")).css(".grid-col.span-md-6.span-lg-8").text
+            puts Nokogiri::HTML(open("https://pokemondb.net/pokedex/nidoran-f")).css(".grid-col.span-md-6.span-lg-8").text.to_s.yellow
         elsif pokemon == "farfetch'd"
-            puts Nokogiri::HTML(open("https://pokemondb.net/pokedex/farfetchd")).css(".grid-col.span-md-6.span-lg-8").text
+            puts Nokogiri::HTML(open("https://pokemondb.net/pokedex/farfetchd")).css(".grid-col.span-md-6.span-lg-8").text.to_s.yellow
         elsif pokemon == "mr. mime"
-            puts Nokogiri::HTML(open("https://pokemondb.net/pokedex/mr-mime")).css(".grid-col.span-md-6.span-lg-8").text
+            puts Nokogiri::HTML(open("https://pokemondb.net/pokedex/mr-mime")).css(".grid-col.span-md-6.span-lg-8").text.to_s.yellow
         else   
             puts Nokogiri::HTML(open("https://pokemondb.net/pokedex/#{pokemon}")).css(".grid-col.span-md-6.span-lg-8").text.to_s.yellow
         end

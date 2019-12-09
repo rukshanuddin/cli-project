@@ -24,6 +24,7 @@ class CLI
 
     def initialize
         greeting
+        main_menu
         run    
     end
 
@@ -41,7 +42,6 @@ class CLI
         slow_print("POKEMON! For some people, POKEMON are pets. Others use them for fights. Myself...I study ")
         slow_print("POKEMON as a profession. On the desk there is my invention, POKEDEX! It automatically records ")
         slow_print("data on POKEMON you've seen or caught! It's a hi-tech encyclopedia!")
-        main_menu
     end
     def main_menu
         puts "\t\t\tEnter 'list' to list PokeDexes\t\t\t\t\t\t".yellow.on_blue
@@ -60,14 +60,7 @@ class CLI
         dot_dot_dot(95)
         puts ash
         dot_dot_dot(95)
-        print "\t\tGotta"
-        sleep(0.25)
-        print "\t\tCatch "
-        sleep(0.25)
-        print "\t\t'Em"
-        sleep(0.25)
-        print "\t\tAll!'\n"
-        sleep(1)
+        slow_print("\t\tGotta\t\tCatch\t\t'Em\t\tAll!'")
         dot_dot_dot(95)
         puts ""
         sleep(1)

@@ -29,7 +29,7 @@ class CLI
     end
 
     def slow_print(sentence)
-        sentence.each_char {|letter| print letter; sleep(0.05)}
+        sentence.each_char {|letter| print letter; sleep(0.03)}
         print "\n"
     end
     def greeting

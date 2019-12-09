@@ -92,7 +92,7 @@ class CLI
         puts "Not a valid selection try again!".red.on_blue
     end
     def gathering_info
-        print "Gathering information. Please wait".red.on_white
+        puts "Gathering information. Please wait".red.on_white
         print "\n"
         dot_dot_dot(100)
         print "\n"

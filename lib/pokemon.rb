@@ -16,6 +16,11 @@ class Pokemon
         @@all << self
         @@all_names << self.name.downcase
     end
+
+    def self.find_by_name(name)
+        @@all.find{|pokemon|pokemon.name == name}
+    end
+
     def self.name_by_number(number)
         name = @@all.find{|pokemon| pokemon.number == number}.name
         name
